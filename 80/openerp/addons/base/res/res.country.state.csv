@@ -1,0 +1,123 @@
+"id","country_id:id","name","code"
+state_au_1,au,"Australian Capital Territory","ACT"
+state_au_2,au,"New South Wales","NSW"
+state_au_3,au,"Northern Territory","NT"
+state_au_4,au,"Queensland","QLD"
+state_au_5,au,"South Australia","SA"
+state_au_6,au,"Tasmania","TAS"
+state_au_7,au,"Victoria","VIC"
+state_au_8,au,"Western Australia","WA"
+state_us_1,us,"Alabama","AL"
+state_us_2,us,"Alaska","AK"
+state_us_3,us,"Arizona","AZ"
+state_us_4,us,"Arkansas","AR"
+state_us_5,us,"California","CA"
+state_us_6,us,"Colorado","CO"
+state_us_7,us,"Connecticut","CT"
+state_us_8,us,"Delaware","DE"
+state_us_9,us,"District of Columbia","DC"
+state_us_10,us,"Florida","FL"
+state_us_11,us,"Georgia","GA"
+state_us_12,us,"Hawaii","HI"
+state_us_13,us,"Idaho","ID"
+state_us_14,us,"Illinois","IL"
+state_us_15,us,"Indiana","IN"
+state_us_16,us,"Iowa","IA"
+state_us_17,us,"Kansas","KS"
+state_us_18,us,"Kentucky","KY"
+state_us_19,us,"Louisiana","LA"
+state_us_20,us,"Maine","ME"
+state_us_21,us,"Montana","MT"
+state_us_22,us,"Nebraska","NE"
+state_us_23,us,"Nevada","NV"
+state_us_24,us,"New Hampshire","NH"
+state_us_25,us,"New Jersey","NJ"
+state_us_26,us,"New Mexico","NM"
+state_us_27,us,"New York","NY"
+state_us_28,us,"North Carolina","NC"
+state_us_29,us,"North Dakota","ND"
+state_us_30,us,"Ohio","OH"
+state_us_31,us,"Oklahoma","OK"
+state_us_32,us,"Oregon","OR"
+state_us_33,us,"Maryland","MD"
+state_us_34,us,"Massachusetts","MA"
+state_us_35,us,"Michigan","MI"
+state_us_36,us,"Minnesota","MN"
+state_us_37,us,"Mississippi","MS"
+state_us_38,us,"Missouri","MO"
+state_us_39,us,"Pennsylvania","PA"
+state_us_40,us,"Rhode Island","RI"
+state_us_41,us,"South Carolina","SC"
+state_us_42,us,"South Dakota","SD"
+state_us_43,us,"Tennessee","TN"
+state_us_44,us,"Texas","TX"
+state_us_45,us,"Utah","UT"
+state_us_46,us,"Vermont","VT"
+state_us_47,us,"Virginia","VA"
+state_us_48,us,"Washington","WA"
+state_us_49,us,"West Virginia","WV"
+state_us_50,us,"Wisconsin","WI"
+state_us_51,us,"Wyoming","WY"
+,base.vn,An Giang,AG
+,base.vn,Bình Dương,BD
+,base.vn,Bình Định,BĐ
+,base.vn,Bắc Giang,BG
+,base.vn,Bắc Kạn,BK
+,base.vn,Bạc Liêu,BL
+,base.vn,Bắc Ninh,BN
+,base.vn,Bình Phước,BP
+,base.vn,Bà Rịa - Vũng Tàu,BR
+,base.vn,Bình Thuận,BT
+,base.vn,Bến Tre,BTR
+,base.vn,Cao Bằng,CB
+,base.vn,Cà Mau,CM
+,base.vn,TP Cần Thơ,CT
+,base.vn,Điện Biên,ĐB
+,base.vn,Đắk Lắk,ĐL
+,base.vn,TP Đà Nẵng,ĐN
+,base.vn,Đồng Nai,ĐN
+,base.vn,Đắk Nông,ĐNO
+,base.vn,Đồng Tháp,ĐT
+,base.vn,Gia Lai,GL
+,base.vn,Hòa Bình,HB
+,base.vn,TP Hồ Chí Minh,HCM
+,base.vn,Hải Dương,HD
+,base.vn,Hậu Giang,HG
+,base.vn,Hà Giang,HGI
+,base.vn,Hà Nội,HN
+,base.vn,Hà Nam,HN
+,base.vn,TP Hải Phòng,HP
+,base.vn,Hà Tĩnh,HT
+,base.vn,Hưng Yên,HY
+,base.vn,Kiên Giang,KG
+,base.vn,Khánh Hòa,KH
+,base.vn,Kon Tum,KT
+,base.vn,Long An,LA
+,base.vn,Lào Cai,LC
+,base.vn,Lai Châu,LCH
+,base.vn,Lâm Đồng,LĐ
+,base.vn,Lạng Sơn,LS
+,base.vn,Nghệ An,NA
+,base.vn,Ninh Bình,NB
+,base.vn,Nam Định,NĐ
+,base.vn,Ninh Thuận,NT
+,base.vn,Phú Thọ,PT
+,base.vn,Phú Yên,PY
+,base.vn,Quảng Bình,QB
+,base.vn,Quảng Ninh,QN
+,base.vn,Quảng Nam,QNA
+,base.vn,Quảng Ngãi,QNG
+,base.vn,Quảng Trị,QT
+,base.vn,Sơn La,SL
+,base.vn,Sóc Trăng,ST
+,base.vn,Thái Bình,TB
+,base.vn,Tiền Giang,TG
+,base.vn,Thanh Hóa,TH
+,base.vn,Thái Nguyên,TN
+,base.vn,Tây Ninh,TNI
+,base.vn,Tuyên Quang,TQ
+,base.vn,Thừa Thiên - Huế,TT
+,base.vn,Trà Vinh,TV
+,base.vn,Vĩnh Long,VL
+,base.vn,Vĩnh Phúc,VP
+,base.vn,Yên Bái,YB
