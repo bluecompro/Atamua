@@ -1550,6 +1550,7 @@ class procurement_order(osv.osv):
                 else:
                     name = seq_obj.get(cr, uid, 'purchase.order', context=context) or _('PO: %s') % procurement.name
                     po_vals = {
+			'state': 'bid',		#<cmt>Sy: state nhan thau khi PO tao tu MTO
                         'name': name,
                         'origin': procurement.origin,
                         'partner_id': partner.id,

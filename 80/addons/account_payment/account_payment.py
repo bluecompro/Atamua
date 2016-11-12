@@ -21,7 +21,8 @@
 
 import logging
 import time
-
+import math
+import num2text
 from openerp.osv import fields, osv
 
 _logger = logging.getLogger(__name__)
@@ -292,7 +293,16 @@ class payment_line(osv.osv):
                 res[id.id] = False
         return res
 
+#<cmt>Sy: chuyen so tien thanh chu        
+    def _get_total_text(self, cr, uid, ids, field_s, args, context=None):
+        res = {}
+        for order in self.browse(cr, uid, ids):
+            res[order.id] = num2text.docso(int(math.ceil(order.amount_currency)))
+        return res
+#</cmt>Sy: chuyen so tien thanh chu  
+
     _columns = {
+        'total_text': fields.function(_get_total_text, type='text', string=u'amount total text', method=True),   
         'name': fields.char('Your Reference', required=True),
         'communication': fields.char('Communication', required=True, help="Used as the message between ordering customer and current company. Depicts 'What do you want to say to the recipient about this order ?'"),
         'communication2': fields.char('Communication 2', help='The successor message of Communication.'),
