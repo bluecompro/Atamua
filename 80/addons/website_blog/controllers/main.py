@@ -77,6 +77,7 @@ class WebsiteBlog(http.Controller):
         post_ids = blog_obj.search(cr, uid, [], offset=(page-1)*self._blog_post_per_page, limit=self._blog_post_per_page, context=context)
         posts = blog_obj.browse(cr, uid, post_ids, context=context)
         blog_url = QueryURL('', ['blog', 'tag'])
+
         return request.website.render("website_blog.latest_blogs", {
             'posts': posts,
             'pager': pager,
@@ -223,6 +224,36 @@ class WebsiteBlog(http.Controller):
             'pager': pager,
             'comments': comments,
         }
+        #huynh: add posts in website_blog.blog_post_complete
+        blog_obj = request.registry['blog.post']
+        total = blog_obj.search(cr, uid, [], count=True, context=context)
+        pager = request.website.pager(
+            url='/blog',
+            total=total,
+            page=page,
+            step=self._blog_post_per_page,
+        )
+        post_ids = blog_obj.search(cr, uid, [], offset=(page - 1) * self._blog_post_per_page,
+                                   limit=self._blog_post_per_page, context=context)
+        posts = blog_obj.browse(cr, uid, post_ids, context=context)
+        values={
+            'tags': tags,
+            'tag': tag,
+            'blog': blog,
+            'blog_post': blog_post,
+            'main_object': blog_post,
+            'nav_list': self.nav_list(),
+            'enable_editor': enable_editor,
+            'next_post': next_post,
+            'date': date_begin,
+            'post_url': post_url,
+            'blog_url': blog_url,
+            'pager': pager,
+            'comments': comments,
+            'posts': posts,
+            'pager': pager,
+        }
+        #end huynh
         response = request.website.render("website_blog.blog_post_complete", values)
 
         request.session[request.session_id] = request.session.get(request.session_id, [])

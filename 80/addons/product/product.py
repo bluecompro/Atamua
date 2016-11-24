@@ -310,7 +310,6 @@ class product_category(osv.osv):
         (osv.osv._check_recursion, 'Error ! You cannot create recursive categories.', ['parent_id'])
     ]
 
-
 class produce_price_history(osv.osv):
     """
     Keep track of the ``product.template`` standard prices as they are changed.

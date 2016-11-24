@@ -204,7 +204,6 @@ class website_sale(http.Controller):
         pager = request.website.pager(url=url, total=product_count, page=page, step=PPG, scope=7, url_args=post)
         product_ids = product_obj.search(cr, uid, domain, limit=PPG, offset=pager['offset'], order='website_published desc, website_sequence desc', context=context)
         products = product_obj.browse(cr, uid, product_ids, context=context)
-
         style_obj = pool['product.style']
         style_ids = style_obj.search(cr, uid, [], context=context)
         styles = style_obj.browse(cr, uid, style_ids, context=context)
@@ -221,7 +220,23 @@ class website_sale(http.Controller):
         to_currency = pricelist.currency_id
         compute_currency = lambda price: pool['res.currency']._compute(cr, uid, from_currency, to_currency, price, context=context)
 
+        #huynh
+        product_obj1 = pool.get('product.template')
+        # cate may in
+        product_ids1 = product_obj1.search(cr, uid, [('public_categ_ids', '=', 138)], limit=PPG,
+                                         order='website_published desc, website_sequence desc', context=context)
+        products1 = product_obj1.browse(cr, uid, product_ids1, context=context)
+        # USB transcend
+        product_ids1 = product_obj1.search(cr, uid, [('public_categ_ids', '=', 141)], limit=PPG,
+                                           order='website_published desc, website_sequence desc',
+                                           context=context)
+        products2 = product_obj1.browse(cr, uid, product_ids1, context=context)
+        #end
+
         values = {
+            'test' : table_compute().process(products1),
+            'products1': products1,
+            'products2': products2,
             'search': search,
             'category': category,
             'attrib_values': attrib_values,
@@ -239,7 +254,10 @@ class website_sale(http.Controller):
             'style_in_product': lambda style, product: style.id in [s.id for s in product.website_style_ids],
             'attrib_encode': lambda attribs: werkzeug.url_encode([('attrib',i) for i in attribs]),
         }
+
+
         return request.website.render("website_sale.products", values)
+
 
     @http.route(['/shop/product/<model("product.template"):product>'], type='http', auth="public", website=True)
     def product(self, product, category='', search='', **kwargs):
@@ -521,7 +539,8 @@ class website_sale(http.Controller):
         # Validation
         error = dict()
         for field_name in self._get_mandatory_billing_fields():
-            if not data.get(field_name):
+            #huynh sua check validate
+            if not data.get(field_name) and (field_name=="phone" or field_name=="name"): #huynh them and
                 error[field_name] = 'missing'
 
         if data.get("vat") and hasattr(registry["res.partner"], "check_vat"):

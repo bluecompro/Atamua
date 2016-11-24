@@ -21,7 +21,26 @@
 
 from openerp import tools
 from openerp.osv import osv, fields
+class res_partner(osv.osv):
+    # _inherit = "res.partner"
 
+    def google_map_img(self, cr, uid, ids, zoom=8, width=298, height=298, context=None):
+        partner = self.browse(cr, uid, ids[0], context=context)
+        params = {
+           'center': '%s, %s %s, %s' % (partner.x_product_trademark or ''),
+           'size': "%sx%s" % (height, width),
+           'zoom': zoom,
+           'sensor': 'false',
+        }
+        return urlplus('http://maps.googleapis.com/maps/api/staticmap' , params)
+
+    def google_map_link(self, cr, uid, ids, zoom=8, context=None):
+        partner = self.browse(cr, uid, ids[0], context=context)
+        params = {
+           'q': '%s, %s %s, %s' % (partner.x_product_trademark or '', partner.city  or '', partner.zip or '', partner.country_id and partner.country_id.name_get()[0][1] or ''),
+           'z': 10
+        }
+        return urlplus('https://maps.google.com/maps' , params)
 class product_style(osv.Model):
     _name = "product.style"
     _columns = {
@@ -34,7 +53,6 @@ class product_pricelist(osv.Model):
     _columns = {
         'code': fields.char('Promotional Code'),
     }
-
 
 class product_public_category(osv.osv):
     _name = "product.public.category"
@@ -176,6 +194,10 @@ class product_template(osv.Model):
             return self.write(cr, uid, [ids[0]], {'website_sequence': next[1]}, context=context)
         else:
             return self.set_sequence_bottom(cr, uid, ids, context=context)
+
+
+
+
 
 class product_product(osv.Model):
     _inherit = "product.product"

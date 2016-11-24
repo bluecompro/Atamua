@@ -802,6 +802,7 @@ class res_partner(osv.osv):
         }
         return urlplus('https://maps.google.com/maps' , params)
 
+
 class res_company(osv.osv):
     _inherit = "res.company"
     def google_map_img(self, cr, uid, ids, zoom=8, width=298, height=298, context=None):
